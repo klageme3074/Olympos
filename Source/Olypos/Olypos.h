@@ -4,3 +4,9 @@
 
 #include "EngineMinimal.h"
 
+enum class Grade {
+	Bronds,
+	Silver,
+	Gold,
+	Special
+};

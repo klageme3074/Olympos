@@ -28,7 +28,12 @@ protected:
 	TSubclassOf<class UOLSlotHUDWiget> HUDWidgetClass;
 
 	void MoveSlot(float DeltaTime);
-	void MoveBackSlot();
+	void MoveBackSlot(float DeltaTime);
+
+	void RandomSlotImgChange(int8 index);
+	void RandomBackSlotImgChange(int8 index);
+
+	void SetSlots();
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -46,7 +51,27 @@ private:
 	UPROPERTY()
 	class UTexture2D* Gold;
 
-	UPROPERTY()
-	class UCanvasPanelSlot * CanvasSlot;
+	UPROPERTY(EditAnywhere)
+	float ScrollSpeed;
 
+	UPROPERTY(EditAnywhere)
+	float BrondsProvability;
+
+	UPROPERTY(EditAnywhere)
+	float SilverProvability;
+
+	UPROPERTY(EditAnywhere)
+	float GoldProvability;
+
+	UPROPERTY(EditAnywhere)
+	float SpecialProvability;
+
+	UPROPERTY()
+	int8 TextureIndex[3];
+
+	UPROPERTY()
+	int8 SlotStopCount;
+
+	UPROPERTY()
+	int8 StopIndex;
 };

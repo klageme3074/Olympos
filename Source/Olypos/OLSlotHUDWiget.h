@@ -15,17 +15,27 @@ class OLYPOS_API UOLSlotHUDWiget : public UUserWidget
 public:
 	class UImage* GetSlot(int32 index);
 	class UImage* GetBackgroundSlot(int32 index);
-	//void SetSlot(int32 index, )
+
+	void SetSlotPosY(int32 index, float y);
+	void SetBackSlotPosY(int32 index, float y);
+
+	float GetSlotPosY(int32 index);
+	float GetBackSlotPosY(int32 index);
+
+	void SetSlotTexture(int32 index, UTexture2D* texture);
+	void SetBackSlotTexture(int32 index, UTexture2D* texture);
+	
 protected:
 	virtual void NativeConstruct() override;
 
 
 private:
 	UPROPERTY()
-	class UImage* FirstSlot[3] = { nullptr, nullptr, nullptr };
+	class UImage* FrontSlot[3] = { nullptr, nullptr, nullptr };
 
 	UPROPERTY()
-	class UImage* BackGroundSlot[3] = { nullptr, nullptr, nullptr };
+	class UImage* BackSlot[3] = { nullptr, nullptr, nullptr };
+
 
 
 };
